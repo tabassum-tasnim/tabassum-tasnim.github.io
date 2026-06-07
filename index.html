@@ -1,1149 +1,880 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasnim Tabassum — ML Engineer & Applied AI</title>
-  <meta
-    name="description"
-    content="Tasnim Tabassum is an ML Engineer and Applied AI professional based in Aachen, Germany, with experience in AI automation, MLOps, data science, and deployed machine learning systems."
-  />
+  <title>Tasnim Tabassum</title>
+  <meta name="description" content="Data Scientist and ML Engineer with experience at E.ON and Ecolab. Python, LLMs, MLOps, SQL. Based in Germany." />
+  <meta property="og:title" content="Tasnim Tabassum" />
+  <meta property="og:description" content="Data-driven problem solver with cross-continental experience in ML, AI tools, and cloud systems." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts: Zodiak display + Satoshi body (Fontshare) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #f7f3ec;
-      --bg-soft: #fbf8f3;
-      --surface: #fffdf9;
-      --surface-2: #f3ede4;
-      --text: #1f1d1a;
-      --muted: #6f685f;
-      --line: rgba(31, 29, 26, 0.10);
-      --line-strong: rgba(31, 29, 26, 0.18);
-      --accent: #8a5a44;
-      --accent-soft: rgba(138, 90, 68, 0.10);
-      --shadow: 0 10px 30px rgba(43, 35, 28, 0.06);
-      --radius: 20px;
-      --radius-sm: 12px;
-      --max: 1180px;
-      --transition: 220ms ease;
+    /* ─── Art direction: Technical precision meets human warmth
+       Palette: Deep navy surfaces, amber accent (intelligence/warmth)
+       Typography: Zodiak (editorial serif display) + Satoshi (clean sans body)
+       Density: Spacious — portfolio, not dashboard ─── */
+
+    :root, [data-theme="light"] {
+      --color-bg:             #f5f4f0;
+      --color-surface:        #f9f8f5;
+      --color-surface-2:      #ffffff;
+      --color-surface-offset: #edecea;
+      --color-divider:        #dbd9d4;
+      --color-border:         rgba(40,37,29,0.10);
+      --color-text:           #1c1a14;
+      --color-text-muted:     #6b6860;
+      --color-text-faint:     #b0aea8;
+      --color-text-inverse:   #f9f8f4;
+      --color-primary:        #b86a00;
+      --color-primary-hover:  #8f5000;
+      --color-primary-highlight: #f0dfc8;
+      --color-accent-subtle:  rgba(184,106,0,0.07);
+      --shadow-sm: 0 1px 3px rgba(28,26,20,0.07);
+      --shadow-md: 0 4px 16px rgba(28,26,20,0.09);
+      --shadow-lg: 0 16px 40px rgba(28,26,20,0.12);
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.875rem;
+      --radius-xl: 1.25rem;
+      --radius-full: 9999px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --content-narrow: 640px;
+      --content-default: 960px;
+      --content-wide: 1200px;
+      --font-display: 'Zodiak', Georgia, serif;
+      --font-body: 'Satoshi', 'Inter', sans-serif;
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(3rem, 0.5rem + 7vw, 7rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+      --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
+      --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
+      --space-16: 4rem;   --space-20: 5rem;   --space-24: 6rem;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    [data-theme="dark"] {
+      --color-bg:             #141210;
+      --color-surface:        #1a1814;
+      --color-surface-2:      #201e1a;
+      --color-surface-offset: #252320;
+      --color-divider:        #2e2c28;
+      --color-border:         rgba(255,255,255,0.08);
+      --color-text:           #e8e5de;
+      --color-text-muted:     #8c8a83;
+      --color-text-faint:     #4e4c47;
+      --color-text-inverse:   #141210;
+      --color-primary:        #e08930;
+      --color-primary-hover:  #f0a050;
+      --color-primary-highlight: rgba(224,137,48,0.15);
+      --color-accent-subtle:  rgba(224,137,48,0.06);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.25);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.35);
+      --shadow-lg: 0 16px 40px rgba(0,0,0,0.45);
     }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Manrope", sans-serif;
-      background: linear-gradient(to bottom, #fbf8f3 0%, #f7f3ec 100%);
-      color: var(--text);
-      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--space-20);
+    }
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background: var(--color-bg);
+      min-height: 100dvh;
+      line-height: 1.65;
       overflow-x: hidden;
+      transition: background var(--transition-interactive), color var(--transition-interactive);
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    h1,h2,h3,h4 { text-wrap: balance; line-height: 1.15; }
+    p, li { text-wrap: pretty; }
+    a, button { transition: color var(--transition-interactive), background var(--transition-interactive), box-shadow var(--transition-interactive), opacity var(--transition-interactive); }
+    button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+    ::selection { background: var(--color-primary-highlight); color: var(--color-text); }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    /* ─── Layout helpers ─── */
+    .container { max-width: var(--content-default); margin-inline: auto; padding-inline: var(--space-6); }
+    .container--wide { max-width: var(--content-wide); margin-inline: auto; padding-inline: var(--space-6); }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    /* ─── Skip link ─── */
+    .skip-link {
+      position: absolute; top: var(--space-2); left: var(--space-4);
+      background: var(--color-primary); color: var(--color-text-inverse);
+      padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+      font-size: var(--text-sm); font-weight: 700;
+      transform: translateY(-120%); z-index: 1000;
     }
+    .skip-link:focus { transform: translateY(0); }
 
-    .container {
-      width: min(var(--max), calc(100% - 48px));
-      margin: 0 auto;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .section {
-      padding: 88px 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 34px;
-    }
-
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: var(--line);
-    }
-
-    .section-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 0.95;
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    /* nav */
-    .nav-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(251, 248, 243, 0.82);
-      border-bottom: 1px solid rgba(31, 29, 26, 0.06);
-    }
-
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      font-size: 13px;
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .brand-text {
-      font-size: 14px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      color: var(--muted);
-      transition: color var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-cta {
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: var(--text);
-      color: #fff;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    /* hero */
-    .hero {
-      padding: 80px 0 56px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 56px;
-      align-items: center;
-    }
-
-    .hero-card {
-      background: rgba(255, 253, 249, 0.72);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .hero h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(3.8rem, 8vw, 6.4rem);
-      line-height: 0.9;
-      letter-spacing: -0.04em;
-      margin: 10px 0 18px;
-    }
-
-    .hero h1 span {
-      color: var(--accent);
-      font-style: italic;
-      font-weight: 600;
-    }
-
-    .hero-sub {
-      font-size: clamp(1.05rem, 1.7vw, 1.25rem);
-      color: var(--muted);
-      max-width: 58ch;
-      margin-bottom: 26px;
-    }
-
-    .hero-sub strong {
-      color: var(--text);
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: transform var(--transition), background var(--transition), color var(--transition);
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: var(--text);
-      color: #fff;
-    }
-
-    .btn-secondary {
+    /* ─── NAV ─── */
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: var(--space-4) var(--space-6);
+      display: flex; align-items: center; justify-content: space-between;
       background: transparent;
-      border: 1px solid var(--line-strong);
-      color: var(--text);
+      transition: background var(--transition-interactive), box-shadow var(--transition-interactive);
+    }
+    .site-nav.scrolled {
+      background: color-mix(in oklch, var(--color-bg) 90%, transparent);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: var(--space-2);
+      text-decoration: none; color: var(--color-text);
+    }
+    .nav-logo-mark {
+      width: 32px; height: 32px;
+    }
+    .nav-logo-name {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .nav-right { display: flex; align-items: center; gap: var(--space-6); }
+    .nav-links-row {
+      display: flex; gap: var(--space-6);
+      list-style: none;
+    }
+    .nav-links-row a {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .nav-links-row a:hover { color: var(--color-text); }
+    .theme-toggle {
+      width: 36px; height: 36px; border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-text-muted);
+    }
+    .theme-toggle:hover { color: var(--color-text); background: var(--color-surface-offset); }
+    @media (max-width: 600px) {
+      .nav-links-row { display: none; }
     }
 
-    .hero-meta {
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100svh;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .meta-box {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px 16px 14px;
-    }
-
-    .meta-num {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2rem;
-      line-height: 1;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-
-    .meta-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-    }
-
-    .photo-panel {
+      grid-template-rows: 1fr auto;
+      padding-top: 80px;
       position: relative;
-    }
-
-    .photo-card {
-      background: linear-gradient(180deg, #fffdf9 0%, #f4ede5 100%);
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      box-shadow: var(--shadow);
-      padding: 22px;
-    }
-
-    .photo-frame {
-      aspect-ratio: 4 / 5;
-      width: 100%;
-      border-radius: 24px;
       overflow: hidden;
-      background: #e9dfd2;
-      border: 1px solid rgba(31, 29, 26, 0.08);
-      display: grid;
-      place-items: center;
-      color: var(--accent);
-      font-size: 14px;
-      text-align: center;
-      padding: 20px;
+    }
+    .hero-inner {
+      display: flex; flex-direction: column; justify-content: center;
+      padding-block: var(--space-20) var(--space-12);
+    }
+    .hero-eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-5);
+    }
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      color: var(--color-text);
+      margin-bottom: var(--space-6);
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--color-primary);
+    }
+    .hero-desc {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      max-width: 52ch;
+      line-height: 1.6;
+      margin-bottom: var(--space-10);
+    }
+    .hero-cta-row {
+      display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm); font-weight: 700;
+      text-decoration: none; letter-spacing: 0.02em;
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      color: var(--color-text-muted);
+      padding: var(--space-3) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm); font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--color-border);
+    }
+    .btn-ghost:hover { color: var(--color-text); background: var(--color-surface-offset); }
+    .hero-scroll-hint {
+      padding: var(--space-8) 0; display: flex; align-items: center; gap: var(--space-3);
+      color: var(--color-text-faint); font-size: var(--text-xs); letter-spacing: 0.08em;
+    }
+    .hero-scroll-hint span { width: 24px; height: 1px; background: currentColor; }
+
+    /* Hero background grid */
+    .hero-bg-grid {
+      position: absolute; inset: 0; z-index: -1;
+      background-image:
+        linear-gradient(var(--color-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+      opacity: 0.4;
     }
 
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    /* ─── SECTIONS ─── */
+    .section { padding-block: clamp(var(--space-16), 8vw, var(--space-24)); }
+    .section--alt { background: var(--color-surface); }
+    .section-header {
+      display: flex; align-items: baseline; gap: var(--space-4);
+      margin-bottom: var(--space-12);
+    }
+    .section-label {
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--color-primary);
+    }
+    .section-line { flex: 1; height: 1px; background: var(--color-divider); }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
     }
 
-    .photo-note {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* about */
+    /* ─── ABOUT ─── */
     .about-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
       align-items: start;
     }
-
-    .about-copy {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: var(--shadow);
+    .about-text-block p {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 55ch;
+      margin-bottom: var(--space-5);
     }
-
-    .about-copy p {
-      margin-bottom: 16px;
-      color: var(--muted);
-      font-size: 1rem;
+    .about-text-block p:first-of-type {
+      font-size: var(--text-lg);
+      color: var(--color-text);
+      font-weight: 500;
+      line-height: 1.5;
     }
-
-    .about-copy p.lead {
-      color: var(--text);
-      font-size: 1.14rem;
-      line-height: 1.7;
+    .skills-list {
+      display: flex; flex-wrap: wrap; gap: var(--space-2);
+      margin-top: var(--space-8);
     }
-
-    .about-side {
-      display: grid;
-      gap: 16px;
+    .skill-tag {
+      font-size: var(--text-xs); font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      background: var(--color-surface-offset);
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      transition: all var(--transition-interactive);
     }
-
-    .side-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: var(--shadow);
+    .skill-tag:hover { background: var(--color-primary-highlight); color: var(--color-primary); border-color: transparent; }
+    .skill-tag.highlight { background: var(--color-primary-highlight); color: var(--color-primary); border-color: transparent; }
+    .stat-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);
     }
-
-    .side-card h3 {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      margin-bottom: 10px;
+    .stat-card {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
     }
-
-    .side-card p,
-    .side-card li {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .tag {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--surface-2);
-      border: 1px solid rgba(31, 29, 26, 0.06);
-      font-size: 13px;
-      color: var(--text);
-    }
-
-    /* experience */
-    .timeline {
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-item {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 26px;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 24px;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .timeline-item:hover {
-      transform: translateY(-2px);
-    }
-
-    .timeline-meta {
-      padding-right: 8px;
-      border-right: 1px solid var(--line);
-    }
-
-    .timeline-date {
-      font-size: 12px;
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
       font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
+      color: var(--color-primary);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: var(--space-1);
+    }
+    .stat-label { font-size: var(--text-xs); color: var(--color-text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: var(--space-10); }
     }
 
-    .timeline-company {
-      font-weight: 800;
-      margin-bottom: 4px;
-      color: var(--text);
-    }
-
-    .timeline-loc {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .timeline-content h3 {
-      font-size: 1.25rem;
-      margin-bottom: 14px;
-      letter-spacing: -0.02em;
-    }
-
-    .timeline-content ul {
-      list-style: none;
+    /* ─── EXPERIENCE TIMELINE ─── */
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-item {
       display: grid;
-      gap: 10px;
-    }
-
-    .timeline-content li {
+      grid-template-columns: 180px 1fr;
+      gap: var(--space-8);
+      padding: var(--space-8) 0;
+      border-top: 1px solid var(--color-divider);
       position: relative;
-      padding-left: 18px;
-      color: var(--muted);
+    }
+    .exp-item:last-child { border-bottom: 1px solid var(--color-divider); }
+    .exp-meta { padding-top: var(--space-1); }
+    .exp-date {
+      font-size: var(--text-xs); font-weight: 700; color: var(--color-text-faint);
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: var(--space-2);
+    }
+    .exp-company {
+      font-size: var(--text-sm); font-weight: 700; color: var(--color-primary);
+    }
+    .exp-location { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-1); }
+    .exp-role {
+      font-family: var(--font-display);
+      font-size: var(--text-lg); font-weight: 700;
+      color: var(--color-text); margin-bottom: var(--space-3);
+      letter-spacing: -0.01em;
+    }
+    .exp-bullets { list-style: none; }
+    .exp-bullets li {
+      font-size: var(--text-sm); color: var(--color-text-muted);
+      padding: var(--space-1) 0;
+      padding-left: var(--space-4);
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--color-primary); font-size: 0.75em;
+      top: 0.35em;
+    }
+    @media (max-width: 640px) {
+      .exp-item { grid-template-columns: 1fr; gap: var(--space-3); }
+      .exp-meta { display: flex; gap: var(--space-4); align-items: baseline; flex-wrap: wrap; }
     }
 
-    .timeline-content li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    /* education */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 26px;
-    }
-
+    /* ─── EDUCATION ─── */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
     .edu-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: var(--shadow);
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      transition: box-shadow var(--transition-interactive), transform var(--transition-interactive);
     }
-
-    .edu-card .year {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 10px;
+    .edu-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .edu-year { font-size: var(--text-xs); font-weight: 700; color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-3); }
+    .edu-degree {
+      font-family: var(--font-display);
+      font-size: var(--text-lg); font-weight: 700;
+      color: var(--color-text); margin-bottom: var(--space-2);
+      letter-spacing: -0.01em;
     }
+    .edu-school { font-size: var(--text-sm); color: var(--color-primary); font-weight: 600; }
+    @media (max-width: 600px) { .edu-grid { grid-template-columns: 1fr; } }
 
-    .edu-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .edu-card p {
-      color: var(--muted);
-    }
-
-    /* projects */
-    .projects-grid {
+    /* ─── PROJECTS ─── */
+    .projects-bento {
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: var(--space-5);
     }
-
     .project-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      transition: transform var(--transition);
-    }
-
-    .project-card:hover {
-      transform: translateY(-2px);
-    }
-
-    .project-card.featured {
-      background: linear-gradient(180deg, #fffdf9 0%, #f6efe7 100%);
-    }
-
-    .project-type {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .project-card h3 {
-      font-size: 1.3rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-
-    .project-card p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .project-links a {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .project-mini-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    /* publications and extras */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-    }
-
-    .stack {
-      display: grid;
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      font-size: 1.12rem;
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-
-    .card .sub {
-      font-size: 13px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .card p, .card li {
-      color: var(--muted);
-    }
-
-    .card ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-
-    .card ul li {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      display: flex; flex-direction: column;
+      transition: box-shadow var(--transition-interactive), transform var(--transition-interactive);
       position: relative;
-      padding-left: 16px;
+      overflow: hidden;
+    }
+    .project-card--featured {
+      grid-column: span 2;
+      background: var(--color-accent-subtle);
+      border-color: color-mix(in oklch, var(--color-primary) 30%, transparent);
+    }
+    .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .project-tag {
+      font-size: var(--text-xs); font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+    }
+    .project-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg); font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-3);
+    }
+    .project-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; flex: 1; }
+    .project-footer {
+      margin-top: var(--space-6);
+      display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;
+    }
+    .project-link {
+      display: inline-flex; align-items: center; gap: var(--space-1);
+      font-size: var(--text-xs); font-weight: 700;
+      color: var(--color-primary); text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .project-link:hover { color: var(--color-primary-hover); }
+    .project-link svg { width: 12px; height: 12px; }
+    .project-accent-number {
+      position: absolute; right: var(--space-6); top: var(--space-6);
+      font-family: var(--font-display); font-size: 4rem; font-weight: 700;
+      color: var(--color-text-faint); opacity: 0.15; line-height: 1;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .projects-bento { grid-template-columns: 1fr; }
+      .project-card--featured { grid-column: span 1; }
     }
 
-    .card ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
+    /* ─── PUBLICATIONS ─── */
+    .pub-list { display: flex; flex-direction: column; gap: var(--space-5); }
+    .pub-item {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      display: grid; grid-template-columns: 1fr auto;
+      gap: var(--space-8); align-items: center;
+      transition: box-shadow var(--transition-interactive);
+    }
+    .pub-item:hover { box-shadow: var(--shadow-md); }
+    .pub-year { font-size: var(--text-xs); font-weight: 700; color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-2); }
+    .pub-title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; color: var(--color-text); letter-spacing: -0.01em; margin-bottom: var(--space-2); }
+    .pub-detail { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .pub-read-link {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-size: var(--text-xs); font-weight: 700;
+      color: var(--color-primary); text-decoration: none;
+      white-space: nowrap;
+      border: 1px solid color-mix(in oklch, var(--color-primary) 40%, transparent);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+    }
+    .pub-read-link:hover { background: var(--color-primary-highlight); }
+    @media (max-width: 600px) {
+      .pub-item { grid-template-columns: 1fr; }
     }
 
-    .lang-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .lang-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .lang-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .lang-row strong {
-      font-size: 0.98rem;
-    }
-
-    .lang-row span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* footer */
+    /* ─── FOOTER ─── */
     footer {
-      padding: 56px 0 80px;
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-divider);
+      padding: var(--space-16) 0;
     }
-
-    .footer-card {
-      background: linear-gradient(180deg, #fffdf9 0%, #f5eee5 100%);
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-      padding: 34px;
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-      align-items: flex-end;
+    .footer-inner {
+      display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-8); flex-wrap: wrap;
     }
-
-    .footer-card h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
-      line-height: 0.95;
-      margin-bottom: 12px;
+    .footer-name {
+      font-family: var(--font-display);
+      font-size: var(--text-xl); font-weight: 700;
+      color: var(--color-text); letter-spacing: -0.02em;
+      margin-bottom: var(--space-2);
     }
-
-    .footer-card p {
-      color: var(--muted);
-      max-width: 580px;
+    .footer-tagline { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .footer-links { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+    .footer-link {
+      font-size: var(--text-sm); color: var(--color-text-muted);
+      text-decoration: none; font-weight: 500;
     }
+    .footer-link:hover { color: var(--color-primary); }
+    .footer-copy { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-8); }
 
-    .footer-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
-
-    .footer-links a {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    /* responsive */
-    @media (max-width: 980px) {
-      .hero-grid,
-      .about-grid,
-      .projects-grid,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-meta {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-meta {
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-        padding-right: 0;
-        padding-bottom: 14px;
-      }
-
-      .edu-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .container {
-        width: min(var(--max), calc(100% - 28px));
-      }
-
-      .nav {
-        padding: 10px 0;
-      }
-
-      .nav-links {
-        gap: 12px;
-      }
-
-      .nav-links a:not(.nav-cta) {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 44px;
-      }
-
-      .hero-meta {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-card,
-      .photo-card,
-      .about-copy,
-      .side-card,
-      .timeline-item,
-      .project-card,
-      .card,
-      .footer-card {
-        padding: 20px;
-      }
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-  <div class="nav-wrap">
-    <div class="container nav">
-      <a href="#top" class="brand">
-        <div class="brand-mark">TT</div>
-        <div class="brand-text">Tasnim Tabassum</div>
-      </a>
+  <!-- NAV -->
+  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+    <a href="#" class="nav-logo" aria-label="Tasnim Tabassum home">
+      <svg class="nav-logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="currentColor" opacity="0.1"/>
+        <text x="16" y="22" font-family="Georgia, serif" font-size="16" font-weight="bold"
+              fill="currentColor" text-anchor="middle" opacity="0.9">TT</text>
+      </svg>
+      <span class="nav-logo-name">Tasnim Tabassum</span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links-row">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+      </ul>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
 
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="container hero-inner" id="main">
+      <p class="hero-eyebrow">Data Scientist · Applied AI · Aachen, Germany</p>
+      <h1 class="hero-name">Tasnim<br><em>Tabassum</em></h1>
+      <p class="hero-desc">
+        Building ML systems that bridge academic insight with real-world impact.
+        Two continents, two research labs, three years of production data work.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#projects" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          View My Work
+        </a>
+        <a href="mailto:towmony@gmail.com" class="btn-ghost">
+          Get in Touch
+        </a>
       </div>
     </div>
-  </div>
-
-  <header id="top" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-card">
-        <div class="eyebrow">ML Engineer · Applied AI · Aachen, Germany</div>
-        <h1>Tasnim <span>Tabassum</span></h1>
-        <p class="hero-sub">
-          I build usable AI systems that move from research into practice — from
-          LLM-powered internal tools and ML pipelines to production dashboards and applied data science.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View selected work</a>
-          <a href="mailto:towmony@gmail.com" class="btn btn-secondary">Email me</a>
-        </div>
-
-        <div class="hero-meta">
-          <div class="meta-box">
-            <div class="meta-num">4</div>
-            <div class="meta-label">AI tools built</div>
-          </div>
-          <div class="meta-box">
-            <div class="meta-num">3+</div>
-            <div class="meta-label">Industry roles</div>
-          </div>
-          <div class="meta-box">
-            <div class="meta-num">2</div>
-            <div class="meta-label">Publications</div>
-          </div>
-          <div class="meta-box">
-            <div class="meta-num">91%</div>
-            <div class="meta-label">Research accuracy</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="photo-panel">
-        <div class="photo-card">
-          <div class="photo-frame">
-            <!-- Replace this block with your real image -->
-            <!-- Example:
-            <img src="tasnim.jpg" alt="Portrait of Tasnim Tabassum" />
-            -->
-            <div>
-              Add your professional photo here<br />
-              4:5 portrait works best
-            </div>
-          </div>
-          <p class="photo-note">
-            Use your CV headshot here. A soft, well-cropped portrait will make the site feel more personal and premium.
-          </p>
-        </div>
+    <div class="container">
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span></span>
+        SCROLL TO EXPLORE
       </div>
     </div>
   </header>
 
-  <main>
-
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">About</div>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-copy">
-            <h2 class="section-title">A calmer, clearer way to show technical depth.</h2>
-            <p class="lead">
-              I work at the intersection of machine learning, AI automation, and practical problem solving.
-              My path spans Bangladesh and Germany, academia and industry, teaching and production work.
-            </p>
-            <p>
-              At E.ON, I built AI prototypes and workflows using Python and LLM tools, developed four AI-driven internal tools, and ran experiments on model performance, prompt design, and workflow reliability.
-            </p>
-            <p>
-              Before that, I designed and deployed end-to-end ML pipelines, automated feature engineering workflows, built internal tooling for training and evaluation, and worked on sensor data, anomaly detection, and operational dashboards.
-            </p>
-            <p>
-              I enjoy turning messy data and ambiguous needs into clear systems that teams can actually use.
-            </p>
-          </div>
-
-          <div class="about-side">
-            <div class="side-card">
-              <h3>Focus</h3>
-              <p>Position yourself as <strong>ML Engineer / Applied AI</strong> while still showing strong data science credibility through projects and experience.</p>
-            </div>
-
-            <div class="side-card">
-              <h3>Core tools</h3>
-              <div class="tag-list">
-                <span class="tag">Python</span>
-                <span class="tag">SQL</span>
-                <span class="tag">LLMs</span>
-                <span class="tag">LangChain</span>
-                <span class="tag">LlamaIndex</span>
-                <span class="tag">PyTorch</span>
-                <span class="tag">TensorFlow</span>
-                <span class="tag">Streamlit</span>
-                <span class="tag">Docker</span>
-                <span class="tag">GitLab</span>
-                <span class="tag">Power BI</span>
-                <span class="tag">RAG</span>
-              </div>
-            </div>
-
-            <div class="side-card">
-              <h3>Contact</h3>
-              <p>towmony@gmail.com</p>
-              <p>015510607394</p>
-              <p>Aachen, Germany</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Experience</div>
-          <div class="section-line"></div>
-        </div>
-
-        <h2 class="section-title">CV-based experience, presented with more clarity.</h2>
-        <p class="section-intro">
-          These titles and descriptions follow your CV rather than the older site version, so the portfolio stays aligned with your strongest current positioning.
-        </p>
-
-        <div class="timeline" style="margin-top: 28px;">
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <div class="timeline-date">03/2024 – Present</div>
-              <div class="timeline-company">E.ON</div>
-              <div class="timeline-loc">Essen</div>
-            </div>
-            <div class="timeline-content">
-              <h3>Working Student – Applied AI & Automation</h3>
-              <ul>
-                <li>Built AI prototypes and workflows using Python and LLM tools.</li>
-                <li>Developed four AI driven internal tools that improved process efficiency.</li>
-                <li>Ran experiments on model performance, prompt design, and workflow reliability.</li>
-                <li>Translated research on behaviour and change management into practical AI solutions.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <div class="timeline-date">04/2023 – 10/2023</div>
-              <div class="timeline-company">E.ON</div>
-              <div class="timeline-loc">Essen</div>
-            </div>
-            <div class="timeline-content">
-              <h3>Working Student – Machine Learning & MLOps</h3>
-              <ul>
-                <li>Designed and deployed end-to-end ML pipelines in cloud environments.</li>
-                <li>Automated data processing and feature engineering workflows.</li>
-                <li>Created internal tools for model training, versioning, and evaluations.</li>
-                <li>Improved CI, testing, and deployment routines within the MLOps stack.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <div class="timeline-date">10/2022 – 03/2023</div>
-              <div class="timeline-company">Ecolab</div>
-              <div class="timeline-loc">Monheim Am Rhein</div>
-            </div>
-            <div class="timeline-content">
-              <h3>Working Student – Data Science</h3>
-              <ul>
-                <li>Processed and analysed sensor data with Python and ML libraries.</li>
-                <li>Built and validated models for anomaly detection and automated insights.</li>
-                <li>Produced visualisations and dashboards for operational teams.</li>
-                <li>Supported product testing with data backed research and customer feedback.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <div class="timeline-date">01/2020 – 09/2020</div>
-              <div class="timeline-company">Northern University Bangladesh (NUB)</div>
-              <div class="timeline-loc">Dhaka</div>
-            </div>
-            <div class="timeline-content">
-              <h3>Adjunct Faculty Lecturer</h3>
-              <ul>
-                <li>Delivered lectures in programming, data analysis, and data visualization to undergraduate students.</li>
-                <li>Designed course materials, assignments, and practical exercises in Python and data handling.</li>
-                <li>Guided students in applying analytical methods to real-world datasets.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <div class="edu-grid">
-          <div class="edu-card">
-            <div class="year">10/2020 – Present</div>
-            <h3>Master of Science in Computational Social Systems</h3>
-            <p>RWTH Aachen University</p>
-          </div>
-          <div class="edu-card">
-            <div class="year">01/2014 – 04/2019</div>
-            <h3>Bachelor of Science in Computer Science & Engineering</h3>
-            <p>Hajee Danesh Science and Technology University</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Projects</div>
-          <div class="section-line"></div>
-        </div>
-
-        <h2 class="section-title">Fewer projects, better presented.</h2>
-        <p class="section-intro">
-          Premium portfolios usually highlight the strongest work first. This layout gives the People Analytics project more weight and keeps the others clean and scannable.
-        </p>
-
-        <div class="projects-grid" style="margin-top: 28px;">
-          <div class="project-card featured">
-            <div class="project-type">Featured project</div>
-            <h3>People Analytics Dashboard</h3>
-            <p>
-              ML-powered employee attrition prediction system achieving 75% accuracy through Random Forest classification. Analyzed 1,470 employee records across 35 features, engineered composite satisfaction scores and tenure groupings, and performed statistical hypothesis testing to validate key drivers. Built an interactive Streamlit dashboard with real-time filtering and 10+ Plotly visualizations, identifying monthly income, age, and tenure as top predictors. Deployed on Streamlit Cloud.
-            </p>
-            <div class="project-links">
-              <a href="https://people-analytics-dashboard-v1.streamlit.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
-              <a href="https://github.com/tasnim-data-scientist/people-analytics-dashboard" target="_blank" rel="noopener noreferrer">View code</a>
-            </div>
-          </div>
-
-          <div class="project-mini-grid">
-            <div class="project-card">
-              <div class="project-type">NLP</div>
-              <h3>Sentiment-Analysis</h3>
-              <p>
-                Sentiment analysis system classifying movie reviews as positive or negative, developed in Python using Jupyter Notebook with Keras, Gensim, NumPy, Pandas, Regex, and NLTK.
-              </p>
-              <div class="project-links">
-                <a href="https://github.com/towmony/Sentiment-Analysis" target="_blank" rel="noopener noreferrer">View code</a>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-type">Conversational AI</div>
-              <h3>NLP-based Chatbot using Python</h3>
-              <p>
-                Retrieval-based chatbot using LSTM, NLTK, Keras, and NumPy to classify user intent and return relevant responses from predefined categories.
-              </p>
-              <div class="project-links">
-                <a href="https://github.com/towmony/Python-Chatbot-using-NLTK-Keras" target="_blank" rel="noopener noreferrer">View code</a>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-type">Classification</div>
-              <h3>Detecting fake news using Python</h3>
-              <p>
-                Fake news classification using TF-IDF and PassiveAggressiveClassifier, achieving 92.82% accuracy on a political news dataset.
-              </p>
-              <div class="project-links">
-                <a href="https://github.com/towmony/Detecting-fake-news-using-Python" target="_blank" rel="noopener noreferrer">View code</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="publications" class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Publications & extras</div>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="two-col">
-          <div class="stack">
-            <div class="card">
-              <div class="sub">Publication · 2020</div>
-              <h3>Enhancement of Single-Handed Bengali Sign Language Recognition Based on Different Features</h3>
-              <p>
-                Journal of Theoretical and Applied Information Technology, ISSN 1992-8645.
-              </p>
-              <p style="margin-top: 10px;">
-                A computer vision–based model using image preprocessing, YCbCr skin segmentation, HOG feature extraction, and KNN classification, achieving 91.1% accuracy.
-              </p>
-            </div>
-
-            <div class="card">
-              <div class="sub">Publication · 2018</div>
-              <h3>Efficient Noise Reduction and HOG Feature Extraction for Sign Language Recognition</h3>
-              <p>
-                International Conference on Advancement in Electrical and Electronic Engineering (ICAEEE).
-              </p>
-              <p style="margin-top: 10px;">
-                An image processing pipeline combining noise reduction, Canny edge detection, HOG feature extraction, and KNN-based classification.
-              </p>
-            </div>
-          </div>
-
-          <div class="stack">
-            <div class="card">
-              <div class="sub">Awards</div>
-              <ul>
-                <li>RWTH Aachen University Text Mining course.</li>
-                <li>HSTU Intra University Programming Contests from 2014–2017.</li>
-                <li>First female team that made it to top 5.</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <div class="sub">Languages</div>
-              <div class="lang-list">
-                <div class="lang-row">
-                  <strong>English</strong>
-                  <span>Native/Bilingual</span>
-                </div>
-                <div class="lang-row">
-                  <strong>Bangla</strong>
-                  <span>Native/Bilingual</span>
-                </div>
-                <div class="lang-row">
-                  <strong>German</strong>
-                  <span>Basic</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="sub">Social impact</div>
-              <h3>Teaching underprivileged pupils</h3>
-              <p>
-                This is worth keeping on the site in a short form because it adds warmth, purpose, and a more human dimension to your portfolio.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer id="contact">
+  <!-- ABOUT -->
+  <section id="about" class="section">
     <div class="container">
-      <div class="footer-card">
-        <div>
-          <div class="eyebrow">Contact</div>
-          <h2>Let the work speak,<br />but make contact easy.</h2>
+      <div class="section-header">
+        <span class="section-label">About</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid reveal">
+        <div class="about-text-block">
+          <h2 class="section-title">Research-minded. Product-aware. Quietly ambitious.</h2>
           <p>
-            This version is intentionally light, restrained, and premium. It is designed to feel more like a refined personal brand site than a typical dark tech template.
+            Data-driven problem solver with hands-on industry experience in ML,
+            data management, and AI-powered tools — built across two continents
+            and in both academic and corporate environments.
           </p>
+          <p>
+            I work confidently with Python, SQL and cloud environments and
+            enjoy transforming messy data into clear, scalable solutions.
+            Cross-cultural perspective and a strong ability to adapt to new
+            contexts, teams, and challenges.
+          </p>
+          <div class="skills-list" role="list" aria-label="Technical skills">
+            <span class="skill-tag highlight" role="listitem">Python</span>
+            <span class="skill-tag highlight" role="listitem">Machine Learning</span>
+            <span class="skill-tag highlight" role="listitem">LLMs</span>
+            <span class="skill-tag" role="listitem">SQL</span>
+            <span class="skill-tag" role="listitem">MLOps</span>
+            <span class="skill-tag" role="listitem">Streamlit</span>
+            <span class="skill-tag" role="listitem">C++</span>
+            <span class="skill-tag" role="listitem">Cloud (Azure/AWS)</span>
+            <span class="skill-tag" role="listitem">Data Analysis</span>
+            <span class="skill-tag" role="listitem">Project Management</span>
+          </div>
         </div>
-
-        <div class="footer-links">
-          <a href="mailto:towmony@gmail.com">towmony@gmail.com</a>
-          <a href="https://tabassum-tasnim.github.io" target="_blank" rel="noopener noreferrer">Portfolio</a>
-          <a href="https://github.com/tasnim-data-scientist" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/towmony" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Years industry experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Peer-reviewed publications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">92%</div>
+            <div class="stat-label">Best model accuracy</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2×</div>
+            <div class="stat-label">Continents worked across</div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Experience</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="exp-list">
+        <article class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-date">Mar 2024 — Present</div>
+            <div class="exp-company">E.ON</div>
+            <div class="exp-location">Essen, Germany</div>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role">Working Student – Applied AI & Automation</h3>
+            <ul class="exp-bullets">
+              <li>Built AI prototypes and workflows using Python and LLM tools</li>
+              <li>Developed four AI driven internal tools that improved process efficiency</li>
+              <li>Ran experiments on model performance, prompt design, and workflow reliability</li>
+              <li>Translated research on behaviour and change management into practical AI solutions</li>
+            </ul>
+          </div>
+        </article>
+        <article class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-date">Apr 2023 — Oct 2023</div>
+            <div class="exp-company">E.ON</div>
+            <div class="exp-location">Essen, Germany</div>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role">Working Student – Machine Learning & MLOps</h3>
+            <ul class="exp-bullets">
+              <li>Designed and deployed end-to-end ML pipelines in cloud environments</li>
+              <li>Automated data processing and feature engineering workflows</li>
+              <li>Created internal tools for model training, versioning, and evaluations</li>
+              <li>Improved CI, testing, and deployment routines within the MLOps stack</li>
+            </ul>
+          </div>
+        </article>
+        <article class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-date">Oct 2022 — Mar 2023</div>
+            <div class="exp-company">Ecolab</div>
+            <div class="exp-location">Monheim, Germany</div>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role">Working Student – Data Science</h3>
+            <ul class="exp-bullets">
+              <li>Processed and analysed sensor data with Python and ML libraries</li>
+              <li>Built and validated models for anomaly detection and automated insights</li>
+              <li>Produced visualisations and dashboards for operational teams</li>
+              <li>Supported product testing with data backed research and customer feedback</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Education inline -->
+      <div style="margin-top: var(--space-20);">
+        <div class="section-header" style="margin-bottom: var(--space-8);">
+          <span class="section-label">Education</span>
+          <div class="section-line"></div>
+        </div>
+        <div class="edu-grid reveal">
+          <div class="edu-card">
+            <div class="edu-year">2020 — Present</div>
+            <div class="edu-degree">Master of Science in Computational Social Systems</div>
+            <div class="edu-school">RWTH Aachen University</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-year">2014 — 2019</div>
+            <div class="edu-degree">Bachelor of Science in Computer Science & Engineering</div>
+            <div class="edu-school">Hajee Danesh Science &amp; Technology University</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container--wide">
+      <div class="container" style="padding-inline: 0;">
+        <div class="section-header">
+          <span class="section-label">Projects</span>
+          <div class="section-line"></div>
+        </div>
+      </div>
+      <div class="projects-bento reveal">
+        <div class="project-card project-card--featured">
+          <span class="project-accent-number" aria-hidden="true">01</span>
+          <div class="project-tag">Machine Learning · HR Analytics</div>
+          <h3 class="project-title">People Analytics Dashboard</h3>
+          <p class="project-desc">
+            Interactive ML-powered dashboard predicting employee attrition with 75% accuracy
+            using Random Forest. Built with Streamlit and statistical analysis of 1,470 employees.
+            Deployed and live.
+          </p>
+          <div class="project-footer">
+            <a href="https://people-analytics-dashboard-v1.streamlit.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+              Live Demo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://github.com/tasnim-data-scientist/people-analytics-dashboard" class="project-link" target="_blank" rel="noopener noreferrer">
+              View Code
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-card">
+          <span class="project-accent-number" aria-hidden="true">02</span>
+          <div class="project-tag">NLP · Deep Learning</div>
+          <h3 class="project-title">Sentiment Analysis</h3>
+          <p class="project-desc">
+            Movie review classifier using Keras, Gensim, and Word2Vec for accurate sentiment prediction.
+          </p>
+          <div class="project-footer">
+            <a href="https://github.com/towmony/Sentiment-Analysis" class="project-link" target="_blank" rel="noopener noreferrer">
+              GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-card">
+          <span class="project-accent-number" aria-hidden="true">03</span>
+          <div class="project-tag">NLP · Conversational AI</div>
+          <h3 class="project-title">Python Chatbot</h3>
+          <p class="project-desc">
+            LSTM-based conversational chatbot built with NLTK and Keras for natural language processing.
+          </p>
+          <div class="project-footer">
+            <a href="https://github.com/towmony/Python-Chatbot-using-NLTK-Keras" class="project-link" target="_blank" rel="noopener noreferrer">
+              GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-card">
+          <span class="project-accent-number" aria-hidden="true">04</span>
+          <div class="project-tag">NLP · Classification</div>
+          <h3 class="project-title">Fake News Detector</h3>
+          <p class="project-desc">
+            Fake news detection using TF-IDF and PassiveAggressiveClassifier. 92.8% accuracy.
+          </p>
+          <div class="project-footer">
+            <a href="https://github.com/towmony/Detecting-fake-news-using-Python" class="project-link" target="_blank" rel="noopener noreferrer">
+              GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Publications</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="pub-list">
+        <div class="pub-item reveal">
+          <div>
+            <div class="pub-year">2020 · Journal of Theoretical and Applied IT</div>
+            <h3 class="pub-title">Bengali Sign Language Recognition</h3>
+            <p class="pub-detail">91.1% accuracy — HOG features for comprehensive sign language recognition system.</p>
+          </div>
+          <a href="http://www.jatit.org/volumes/Vol98No5/2Vol98No5.pdf" class="pub-read-link" target="_blank" rel="noopener noreferrer">
+            Read Paper →
+          </a>
+        </div>
+        <div class="pub-item reveal">
+          <div>
+            <div class="pub-year">2018 · IEEE</div>
+            <h3 class="pub-title">Noise Reduction for Sign Language Recognition</h3>
+            <p class="pub-detail">HOG + KNN pipeline for effective noise reduction in sign language recognition systems.</p>
+          </div>
+          <a href="https://ieeexplore.ieee.org/document/8642983" class="pub-read-link" target="_blank" rel="noopener noreferrer">
+            Read Paper →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-name">Tasnim Tabassum</div>
+          <div class="footer-tagline">Applied AI · Aachen, Germany</div>
+          <div class="footer-links" style="margin-top: var(--space-5);">
+            <a href="mailto:towmony@gmail.com" class="footer-link">towmony@gmail.com</a>
+            <a href="https://github.com/towmony" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/tasnim-tabassum/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Tasnim Tabassum. Built with care.</p>
+    </div>
   </footer>
 
+  <script>
+    // Dark mode toggle
+    (function(){
+      const t=document.querySelector('[data-theme-toggle]'), r=document.documentElement;
+      let d=r.getAttribute('data-theme')||'dark';
+      function setTheme(val){
+        d=val; r.setAttribute('data-theme',d);
+        if(t){ t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');
+          t.innerHTML=d==='dark'
+            ?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+            :'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+        }
+      }
+      setTheme(d);
+      t&&t.addEventListener('click',()=>setTheme(d==='dark'?'light':'dark'));
+    })();
+
+    // Sticky nav
+    const nav=document.getElementById('site-nav');
+    window.addEventListener('scroll',()=>{
+      nav.classList.toggle('scrolled', window.scrollY>60);
+    },{passive:true});
+
+    // Scroll reveal
+    const reveals=document.querySelectorAll('.reveal');
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    },{threshold:0.1, rootMargin:'0px 0px -60px 0px'});
+    reveals.forEach(el=>io.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',function(e){
+        const t=document.querySelector(this.getAttribute('href'));
+        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+      });
+    });
+  </script>
 </body>
 </html>
