@@ -6,7 +6,7 @@
   <title>Tasnim Tabassum — ML Engineer & Applied AI</title>
   <meta
     name="description"
-    content="Tasnim Tabassum is an ML Engineer and Applied AI professional in Aachen, Germany, with experience in AI automation, MLOps, data science, and deployed machine learning systems."
+    content="Tasnim Tabassum is an ML Engineer and Applied AI professional based in Aachen, Germany, with experience in AI automation, MLOps, data science, and deployed machine learning systems."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,23 +15,19 @@
 
   <style>
     :root {
-      --bg: #f6f2eb;
-      --bg-2: #fbf8f2;
-      --surface: rgba(255, 252, 247, 0.82);
-      --surface-solid: #fcfaf6;
-      --text: #171614;
-      --muted: #6b655c;
-      --soft: #8a8378;
-      --line: rgba(23, 22, 20, 0.09);
-      --line-strong: rgba(23, 22, 20, 0.16);
-      --accent: #7e614d;
-      --accent-2: #66715e;
-      --accent-soft: rgba(126, 97, 77, 0.08);
-      --shadow-sm: 0 6px 18px rgba(34, 29, 24, 0.04);
-      --shadow-md: 0 18px 44px rgba(34, 29, 24, 0.06);
-      --radius-sm: 14px;
-      --radius-md: 22px;
-      --radius-lg: 30px;
+      --bg: #f7f3ec;
+      --bg-soft: #fbf8f3;
+      --surface: #fffdf9;
+      --surface-2: #f3ede4;
+      --text: #1f1d1a;
+      --muted: #6f685f;
+      --line: rgba(31, 29, 26, 0.10);
+      --line-strong: rgba(31, 29, 26, 0.18);
+      --accent: #8a5a44;
+      --accent-soft: rgba(138, 90, 68, 0.10);
+      --shadow: 0 10px 30px rgba(43, 35, 28, 0.06);
+      --radius: 20px;
+      --radius-sm: 12px;
       --max: 1180px;
       --transition: 220ms ease;
     }
@@ -48,10 +44,7 @@
 
     body {
       font-family: "Manrope", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(126, 97, 77, 0.05), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(102, 113, 94, 0.04), transparent 26%),
-        linear-gradient(180deg, #fbf8f2 0%, #f6f2eb 100%);
+      background: linear-gradient(to bottom, #fbf8f3 0%, #f7f3ec 100%);
       color: var(--text);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
@@ -59,13 +52,13 @@
     }
 
     img {
-      display: block;
       max-width: 100%;
+      display: block;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     .container {
@@ -73,27 +66,23 @@
       margin: 0 auto;
     }
 
-    .serif {
-      font-family: "Cormorant Garamond", serif;
-    }
-
     .eyebrow {
       font-size: 12px;
-      text-transform: uppercase;
       letter-spacing: 0.18em;
+      text-transform: uppercase;
       color: var(--accent);
       font-weight: 700;
     }
 
     .section {
-      padding: 96px 0;
+      padding: 88px 0;
     }
 
     .section-head {
       display: flex;
       align-items: center;
       gap: 18px;
-      margin-bottom: 30px;
+      margin-bottom: 34px;
     }
 
     .section-line {
@@ -104,69 +93,69 @@
 
     .section-title {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.2rem, 4vw, 3.7rem);
+      font-size: clamp(2rem, 4vw, 3.4rem);
       line-height: 0.95;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
     }
 
     .section-intro {
-      max-width: 720px;
+      max-width: 760px;
       color: var(--muted);
       font-size: 1rem;
     }
 
-    /* NAV */
+    /* nav */
     .nav-wrap {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(251, 248, 242, 0.72);
-      border-bottom: 1px solid rgba(23, 22, 20, 0.05);
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(251, 248, 243, 0.82);
+      border-bottom: 1px solid rgba(31, 29, 26, 0.06);
     }
 
     .nav {
-      min-height: 74px;
+      min-height: 72px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
+      font-weight: 800;
+      color: var(--text);
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: rgba(255,255,255,0.58);
+      background: var(--surface);
       border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow);
+      font-size: 13px;
       color: var(--accent);
       font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.06em;
     }
 
-    .brand-name {
+    .brand-text {
       font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
       gap: 24px;
-      align-items: center;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .nav-links a {
@@ -179,76 +168,76 @@
       color: var(--text);
     }
 
-    .nav-links .contact-pill {
+    .nav-cta {
       padding: 10px 16px;
       border-radius: 999px;
       background: var(--text);
       color: #fff;
+      font-size: 14px;
       font-weight: 700;
     }
 
-    /* HERO */
+    /* hero */
     .hero {
-      padding: 72px 0 46px;
+      padding: 80px 0 56px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 56px;
       align-items: center;
     }
 
-    .hero-copy {
-      padding-right: 10px;
+    .hero-card {
+      background: rgba(255, 253, 249, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 28px;
     }
 
-    .hero-kicker {
-      margin-bottom: 16px;
-    }
-
-    .hero-title {
+    .hero h1 {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(4.2rem, 8.2vw, 7rem);
-      line-height: 0.88;
-      letter-spacing: -0.05em;
-      margin-bottom: 20px;
+      font-size: clamp(3.8rem, 8vw, 6.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      margin: 10px 0 18px;
     }
 
-    .hero-title span {
+    .hero h1 span {
       color: var(--accent);
       font-style: italic;
       font-weight: 600;
     }
 
-    .hero-lead {
-      font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+    .hero-sub {
+      font-size: clamp(1.05rem, 1.7vw, 1.25rem);
       color: var(--muted);
-      max-width: 57ch;
-      margin-bottom: 28px;
+      max-width: 58ch;
+      margin-bottom: 26px;
     }
 
-    .hero-lead strong {
+    .hero-sub strong {
       color: var(--text);
-      font-weight: 700;
     }
 
     .hero-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 34px;
+      margin-bottom: 28px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 14px 19px;
+      padding: 13px 18px;
       border-radius: 999px;
       font-size: 14px;
       font-weight: 700;
-      transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+      transition: transform var(--transition), background var(--transition), color var(--transition);
     }
 
     .btn:hover {
@@ -258,29 +247,28 @@
     .btn-primary {
       background: var(--text);
       color: #fff;
-      box-shadow: var(--shadow-sm);
     }
 
     .btn-secondary {
+      background: transparent;
       border: 1px solid var(--line-strong);
       color: var(--text);
-      background: transparent;
     }
 
-    .hero-stats {
+    .hero-meta {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
     }
 
-    .hero-stat {
-      padding-right: 8px;
+    .meta-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 16px 14px;
     }
 
-    .hero-stat strong {
-      display: block;
+    .meta-num {
       font-family: "Cormorant Garamond", serif;
       font-size: 2rem;
       line-height: 1;
@@ -288,39 +276,38 @@
       margin-bottom: 4px;
     }
 
-    .hero-stat span {
+    .meta-label {
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--soft);
+      color: var(--muted);
     }
 
-    .hero-photo {
+    .photo-panel {
       position: relative;
     }
 
-    .photo-shell {
-      background: rgba(255,255,255,0.34);
+    .photo-card {
+      background: linear-gradient(180deg, #fffdf9 0%, #f4ede5 100%);
       border: 1px solid var(--line);
-      border-radius: 34px;
-      padding: 20px;
-      box-shadow: var(--shadow-md);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 22px;
     }
 
     .photo-frame {
-      width: 100%;
       aspect-ratio: 4 / 5;
-      border-radius: 26px;
+      width: 100%;
+      border-radius: 24px;
       overflow: hidden;
-      background: linear-gradient(180deg, #efe4d7 0%, #e6d9ca 100%);
-      position: relative;
-      border: 1px solid rgba(23, 22, 20, 0.08);
+      background: #e9dfd2;
+      border: 1px solid rgba(31, 29, 26, 0.08);
       display: grid;
       place-items: center;
-      text-align: center;
-      padding: 20px;
       color: var(--accent);
       font-size: 14px;
+      text-align: center;
+      padding: 20px;
     }
 
     .photo-frame img {
@@ -329,67 +316,63 @@
       object-fit: cover;
     }
 
-    .photo-caption {
+    .photo-note {
       margin-top: 14px;
       font-size: 13px;
       color: var(--muted);
     }
 
-    /* ABOUT */
+    /* about */
     .about-grid {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 34px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
       align-items: start;
     }
 
-    .about-main {
-      padding-right: 10px;
-    }
-
-    .about-main .section-title {
-      max-width: 13ch;
-    }
-
     .about-copy {
-      display: grid;
-      gap: 16px;
-      max-width: 62ch;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
     }
 
     .about-copy p {
+      margin-bottom: 16px;
       color: var(--muted);
       font-size: 1rem;
     }
 
     .about-copy p.lead {
       color: var(--text);
-      font-size: 1.12rem;
-      line-height: 1.75;
+      font-size: 1.14rem;
+      line-height: 1.7;
     }
 
     .about-side {
       display: grid;
-      gap: 14px;
+      gap: 16px;
     }
 
-    .minimal-card {
-      background: rgba(255, 252, 247, 0.62);
+    .side-card {
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 22px;
       padding: 22px;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow);
     }
 
-    .minimal-card h3 {
-      font-size: 12px;
+    .side-card h3 {
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       color: var(--accent);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .minimal-card p {
+    .side-card p,
+    .side-card li {
       color: var(--muted);
       font-size: 0.96rem;
     }
@@ -398,80 +381,84 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .tag {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.42);
-      border: 1px solid rgba(23, 22, 20, 0.07);
+      background: var(--surface-2);
+      border: 1px solid rgba(31, 29, 26, 0.06);
       font-size: 13px;
       color: var(--text);
     }
 
-    /* EXPERIENCE */
-    .experience-wrap {
-      margin-top: 26px;
-      border-top: 1px solid var(--line);
+    /* experience */
+    .timeline {
+      display: grid;
+      gap: 18px;
     }
 
-    .exp-row {
+    .timeline-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 26px;
       display: grid;
       grid-template-columns: 220px 1fr;
-      gap: 26px;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line);
-      transition: background var(--transition);
+      gap: 24px;
+      transition: transform var(--transition), box-shadow var(--transition);
     }
 
-    .exp-row:hover {
-      background: rgba(255,255,255,0.18);
+    .timeline-item:hover {
+      transform: translateY(-2px);
     }
 
-    .exp-meta {
-      padding-top: 4px;
+    .timeline-meta {
+      padding-right: 8px;
+      border-right: 1px solid var(--line);
     }
 
-    .exp-date {
+    .timeline-date {
       font-size: 12px;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--accent);
-      font-weight: 700;
       margin-bottom: 8px;
     }
 
-    .exp-company {
+    .timeline-company {
       font-weight: 800;
       margin-bottom: 4px;
+      color: var(--text);
     }
 
-    .exp-location {
-      font-size: 14px;
+    .timeline-loc {
       color: var(--muted);
+      font-size: 14px;
     }
 
-    .exp-content h3 {
-      font-size: 1.22rem;
+    .timeline-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 14px;
       letter-spacing: -0.02em;
-      margin-bottom: 12px;
     }
 
-    .exp-content ul {
+    .timeline-content ul {
       list-style: none;
       display: grid;
       gap: 10px;
-      max-width: 70ch;
     }
 
-    .exp-content li {
+    .timeline-content li {
       position: relative;
       padding-left: 18px;
       color: var(--muted);
     }
 
-    .exp-content li::before {
+    .timeline-content li::before {
       content: "—";
       position: absolute;
       left: 0;
@@ -479,20 +466,23 @@
       font-weight: 700;
     }
 
-    /* EDUCATION */
-    .education-grid {
+    /* education */
+    .edu-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 34px;
+      margin-top: 26px;
     }
 
-    .edu-item {
-      padding: 22px 0 0;
-      border-top: 1px solid var(--line);
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
     }
 
-    .edu-date {
+    .edu-card .year {
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -501,71 +491,63 @@
       margin-bottom: 10px;
     }
 
-    .edu-item h3 {
-      font-size: 1.12rem;
+    .edu-card h3 {
+      font-size: 1.1rem;
       margin-bottom: 8px;
     }
 
-    .edu-item p {
+    .edu-card p {
       color: var(--muted);
     }
 
-    /* PROJECTS */
-    .project-feature {
+    /* projects */
+    .projects-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: stretch;
-      margin-top: 30px;
-      margin-bottom: 18px;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 18px;
     }
 
-    .feature-main {
-      background: linear-gradient(180deg, rgba(255,255,255,0.52) 0%, rgba(255,252,247,0.72) 100%);
+    .project-card {
+      background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 34px;
-      box-shadow: var(--shadow-md);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition);
     }
 
-    .feature-side {
-      background: rgba(255,255,255,0.3);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .project-card:hover {
+      transform: translateY(-2px);
     }
 
-    .project-label {
+    .project-card.featured {
+      background: linear-gradient(180deg, #fffdf9 0%, #f6efe7 100%);
+    }
+
+    .project-type {
       font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       color: var(--accent);
       font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .feature-main h3,
-    .feature-side h3,
-    .project-card h3 {
-      font-size: 1.36rem;
-      letter-spacing: -0.03em;
       margin-bottom: 12px;
     }
 
-    .feature-main p,
-    .feature-side p,
+    .project-card h3 {
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
     .project-card p {
       color: var(--muted);
+      margin-bottom: 18px;
     }
 
     .project-links {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 20px;
     }
 
     .project-links a {
@@ -574,78 +556,62 @@
       color: var(--accent);
     }
 
-    .project-grid {
+    .project-mini-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 18px;
     }
 
-    .project-card {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: rgba(255,255,255,0.28);
-      transition: transform var(--transition), background var(--transition);
-    }
-
-    .project-card:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.42);
-    }
-
-    /* PUBLICATIONS + SIDE INFO */
-    .split-grid {
+    /* publications and extras */
+    .two-col {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 24px;
-      margin-top: 28px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
     }
 
     .stack {
       display: grid;
-      gap: 16px;
+      gap: 18px;
     }
 
-    .info-card {
+    .card {
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 24px;
-      background: rgba(255,255,255,0.28);
-      padding: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
     }
 
-    .info-card .mini-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .info-card h3 {
+    .card h3 {
       font-size: 1.12rem;
       margin-bottom: 10px;
       letter-spacing: -0.02em;
     }
 
-    .info-card p,
-    .info-card li {
+    .card .sub {
+      font-size: 13px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .card p, .card li {
       color: var(--muted);
     }
 
-    .info-card ul {
+    .card ul {
       list-style: none;
       display: grid;
       gap: 10px;
     }
 
-    .info-card li {
+    .card ul li {
       position: relative;
       padding-left: 16px;
     }
 
-    .info-card li::before {
+    .card ul li::before {
       content: "•";
       position: absolute;
       left: 0;
@@ -661,12 +627,12 @@
       display: flex;
       justify-content: space-between;
       gap: 16px;
-      border-bottom: 1px solid var(--line);
       padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
     }
 
     .lang-row:last-child {
-      border-bottom: 0;
+      border-bottom: none;
       padding-bottom: 0;
     }
 
@@ -679,85 +645,112 @@
       font-size: 0.95rem;
     }
 
-    /* FOOTER */
+    /* footer */
     footer {
-      padding: 88px 0 72px;
+      padding: 56px 0 80px;
     }
 
-    .footer-shell {
-      border-top: 1px solid var(--line);
-      padding-top: 34px;
+    .footer-card {
+      background: linear-gradient(180deg, #fffdf9 0%, #f5eee5 100%);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 34px;
       display: flex;
       justify-content: space-between;
-      gap: 28px;
+      gap: 24px;
       flex-wrap: wrap;
-      align-items: end;
+      align-items: flex-end;
     }
 
-    .footer-title {
+    .footer-card h2 {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.5rem, 4vw, 4rem);
-      line-height: 0.92;
-      letter-spacing: -0.03em;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 0.95;
       margin-bottom: 12px;
     }
 
-    .footer-copy {
-      max-width: 560px;
+    .footer-card p {
       color: var(--muted);
+      max-width: 580px;
     }
 
     .footer-links {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
       align-items: center;
     }
 
     .footer-links a {
-      color: var(--accent);
-      font-weight: 700;
       font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
     }
 
-    /* RESPONSIVE */
+    /* responsive */
     @media (max-width: 980px) {
       .hero-grid,
       .about-grid,
-      .project-feature,
-      .split-grid {
+      .projects-grid,
+      .two-col {
         grid-template-columns: 1fr;
       }
 
-      .hero-stats {
+      .hero-meta {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .project-grid {
+      .timeline-item {
         grid-template-columns: 1fr;
       }
 
-      .education-grid {
+      .timeline-meta {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding-right: 0;
+        padding-bottom: 14px;
+      }
+
+      .edu-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 760px) {
-      .exp-row {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
+    @media (max-width: 680px) {
       .container {
         width: min(var(--max), calc(100% - 28px));
       }
 
-      .nav-links a:not(.contact-pill) {
+      .nav {
+        padding: 10px 0;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a:not(.nav-cta) {
         display: none;
       }
 
       .hero {
         padding-top: 44px;
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-card,
+      .photo-card,
+      .about-copy,
+      .side-card,
+      .timeline-item,
+      .project-card,
+      .card,
+      .footer-card {
+        padding: 20px;
       }
     }
   </style>
@@ -768,7 +761,7 @@
     <div class="container nav">
       <a href="#top" class="brand">
         <div class="brand-mark">TT</div>
-        <div class="brand-name">Tasnim Tabassum</div>
+        <div class="brand-text">Tasnim Tabassum</div>
       </a>
 
       <div class="nav-links">
@@ -776,20 +769,19 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
-        <a href="#contact" class="contact-pill">Contact</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </div>
     </div>
   </div>
 
-  <header class="hero" id="top">
+  <header id="top" class="hero">
     <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow hero-kicker">ML Engineer · Applied AI · Aachen, Germany</div>
-        <h1 class="hero-title">Tasnim <span>Tabassum</span></h1>
-        <p class="hero-lead">
-          <strong>ML Engineer building applied AI systems with clarity, rigor, and real-world impact.</strong>
-          From LLM-powered internal tools at E.ON to deployed machine learning dashboards and research-driven systems,
-          I build data products that are technically strong and genuinely usable.
+      <div class="hero-card">
+        <div class="eyebrow">ML Engineer · Applied AI · Aachen, Germany</div>
+        <h1>Tasnim <span>Tabassum</span></h1>
+        <p class="hero-sub">
+          I build usable AI systems that move from research into practice — from
+          LLM-powered internal tools and ML pipelines to production dashboards and applied data science.
         </p>
 
         <div class="hero-actions">
@@ -797,39 +789,41 @@
           <a href="mailto:towmony@gmail.com" class="btn btn-secondary">Email me</a>
         </div>
 
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <strong>4</strong>
-            <span>AI tools built</span>
+        <div class="hero-meta">
+          <div class="meta-box">
+            <div class="meta-num">4</div>
+            <div class="meta-label">AI tools built</div>
           </div>
-          <div class="hero-stat">
-            <strong>3+</strong>
-            <span>Industry roles</span>
+          <div class="meta-box">
+            <div class="meta-num">3+</div>
+            <div class="meta-label">Industry roles</div>
           </div>
-          <div class="hero-stat">
-            <strong>2</strong>
-            <span>Publications</span>
+          <div class="meta-box">
+            <div class="meta-num">2</div>
+            <div class="meta-label">Publications</div>
           </div>
-          <div class="hero-stat">
-            <strong>91.1%</strong>
-            <span>Research accuracy</span>
+          <div class="meta-box">
+            <div class="meta-num">91%</div>
+            <div class="meta-label">Research accuracy</div>
           </div>
         </div>
       </div>
 
-      <div class="hero-photo">
-        <div class="photo-shell">
+      <div class="photo-panel">
+        <div class="photo-card">
           <div class="photo-frame">
-            <!-- Replace with your real photo -->
+            <!-- Replace this block with your real image -->
             <!-- Example:
-            <img src="tasnim.jpg" alt="Portrait of Tasnim Tabassum">
+            <img src="tasnim.jpg" alt="Portrait of Tasnim Tabassum" />
             -->
-            Add your portrait here<br>
-            Best crop: 4:5 vertical headshot
+            <div>
+              Add your professional photo here<br />
+              4:5 portrait works best
+            </div>
           </div>
-          <div class="photo-caption">
-            Use the professional photo from your CV here to make the site feel more personal, polished, and premium. [file:2]
-          </div>
+          <p class="photo-note">
+            Use your CV headshot here. A soft, well-cropped portrait will make the site feel more personal and premium.
+          </p>
         </div>
       </div>
     </div>
@@ -837,7 +831,7 @@
 
   <main>
 
-    <section class="section" id="about">
+    <section id="about" class="section">
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">About</div>
@@ -845,32 +839,31 @@
         </div>
 
         <div class="about-grid">
-          <div class="about-main">
-            <h2 class="section-title">Research-minded. Product-aware. Quietly ambitious.</h2>
-            <div class="about-copy">
-              <p class="lead">
-                I work across machine learning, data systems, and AI-powered tools, with experience in both academic and corporate environments across two continents. [file:2]
-              </p>
-              <p>
-                My recent work at E.ON includes building AI prototypes and workflows using Python and LLM tools, developing four AI-driven internal tools, and experimenting with model performance, prompt design, and workflow reliability. [file:2]
-              </p>
-              <p>
-                Before that, I designed and deployed end-to-end ML pipelines, automated data processing and feature engineering workflows, and built internal tooling for model training, evaluation, and deployment. [file:2]
-              </p>
-              <p>
-                I’m most interested in applied AI that is useful in practice — systems that are thoughtful, robust, and easy for real teams to work with.
-              </p>
-            </div>
+          <div class="about-copy">
+            <h2 class="section-title">A calmer, clearer way to show technical depth.</h2>
+            <p class="lead">
+              I work at the intersection of machine learning, AI automation, and practical problem solving.
+              My path spans Bangladesh and Germany, academia and industry, teaching and production work.
+            </p>
+            <p>
+              At E.ON, I built AI prototypes and workflows using Python and LLM tools, developed four AI-driven internal tools, and ran experiments on model performance, prompt design, and workflow reliability.
+            </p>
+            <p>
+              Before that, I designed and deployed end-to-end ML pipelines, automated feature engineering workflows, built internal tooling for training and evaluation, and worked on sensor data, anomaly detection, and operational dashboards.
+            </p>
+            <p>
+              I enjoy turning messy data and ambiguous needs into clear systems that teams can actually use.
+            </p>
           </div>
 
           <div class="about-side">
-            <div class="minimal-card">
+            <div class="side-card">
               <h3>Focus</h3>
-              <p>Positioning: <strong>ML Engineer / Applied AI</strong> with strong data science credibility through projects, deployment work, and experimentation. [file:2]</p>
+              <p>Position yourself as <strong>ML Engineer / Applied AI</strong> while still showing strong data science credibility through projects and experience.</p>
             </div>
 
-            <div class="minimal-card">
-              <h3>Core stack</h3>
+            <div class="side-card">
+              <h3>Core tools</h3>
               <div class="tag-list">
                 <span class="tag">Python</span>
                 <span class="tag">SQL</span>
@@ -887,129 +880,131 @@
               </div>
             </div>
 
-            <div class="minimal-card">
+            <div class="side-card">
               <h3>Contact</h3>
-              <p>towmony@gmail.com<br>015510607394<br>Aachen, Germany<br>tabassum-tasnim.github.io</p>
+              <p>towmony@gmail.com</p>
+              <p>015510607394</p>
+              <p>Aachen, Germany</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="experience">
+    <section id="experience" class="section">
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">Experience</div>
           <div class="section-line"></div>
         </div>
 
-        <h2 class="section-title">Precise experience, presented with more elegance.</h2>
+        <h2 class="section-title">CV-based experience, presented with more clarity.</h2>
         <p class="section-intro">
-          The role titles and content below are kept aligned with your CV so the site stays professionally consistent and credible. [file:2]
+          These titles and descriptions follow your CV rather than the older site version, so the portfolio stays aligned with your strongest current positioning.
         </p>
 
-        <div class="experience-wrap">
-          <article class="exp-row">
-            <div class="exp-meta">
-              <div class="exp-date">03/2024 – Present</div>
-              <div class="exp-company">E.ON</div>
-              <div class="exp-location">Essen</div>
+        <div class="timeline" style="margin-top: 28px;">
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <div class="timeline-date">03/2024 – Present</div>
+              <div class="timeline-company">E.ON</div>
+              <div class="timeline-loc">Essen</div>
             </div>
-            <div class="exp-content">
+            <div class="timeline-content">
               <h3>Working Student – Applied AI & Automation</h3>
               <ul>
-                <li>Built AI prototypes and workflows using Python and LLM tools. [file:2]</li>
-                <li>Developed four AI driven internal tools that improved process efficiency. [file:2]</li>
-                <li>Ran experiments on model performance, prompt design, and workflow reliability. [file:2]</li>
-                <li>Translated research on behaviour and change management into practical AI solutions. [file:2]</li>
+                <li>Built AI prototypes and workflows using Python and LLM tools.</li>
+                <li>Developed four AI driven internal tools that improved process efficiency.</li>
+                <li>Ran experiments on model performance, prompt design, and workflow reliability.</li>
+                <li>Translated research on behaviour and change management into practical AI solutions.</li>
               </ul>
             </div>
           </article>
 
-          <article class="exp-row">
-            <div class="exp-meta">
-              <div class="exp-date">04/2023 – 10/2023</div>
-              <div class="exp-company">E.ON</div>
-              <div class="exp-location">Essen</div>
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <div class="timeline-date">04/2023 – 10/2023</div>
+              <div class="timeline-company">E.ON</div>
+              <div class="timeline-loc">Essen</div>
             </div>
-            <div class="exp-content">
+            <div class="timeline-content">
               <h3>Working Student – Machine Learning & MLOps</h3>
               <ul>
-                <li>Designed and deployed end-to-end ML pipelines in cloud environments. [file:2]</li>
-                <li>Automated data processing and feature engineering workflows. [file:2]</li>
-                <li>Created internal tools for model training, versioning, and evaluations. [file:2]</li>
-                <li>Improved CI, testing, and deployment routines within the MLOps stack. [file:2]</li>
+                <li>Designed and deployed end-to-end ML pipelines in cloud environments.</li>
+                <li>Automated data processing and feature engineering workflows.</li>
+                <li>Created internal tools for model training, versioning, and evaluations.</li>
+                <li>Improved CI, testing, and deployment routines within the MLOps stack.</li>
               </ul>
             </div>
           </article>
 
-          <article class="exp-row">
-            <div class="exp-meta">
-              <div class="exp-date">10/2022 – 03/2023</div>
-              <div class="exp-company">Ecolab</div>
-              <div class="exp-location">Monheim Am Rhein</div>
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <div class="timeline-date">10/2022 – 03/2023</div>
+              <div class="timeline-company">Ecolab</div>
+              <div class="timeline-loc">Monheim Am Rhein</div>
             </div>
-            <div class="exp-content">
+            <div class="timeline-content">
               <h3>Working Student – Data Science</h3>
               <ul>
-                <li>Processed and analysed sensor data with Python and ML libraries. [file:2]</li>
-                <li>Built and validated models for anomaly detection and automated insights. [file:2]</li>
-                <li>Produced visualisations and dashboards for operational teams. [file:2]</li>
-                <li>Supported product testing with data backed research and customer feedback. [file:2]</li>
+                <li>Processed and analysed sensor data with Python and ML libraries.</li>
+                <li>Built and validated models for anomaly detection and automated insights.</li>
+                <li>Produced visualisations and dashboards for operational teams.</li>
+                <li>Supported product testing with data backed research and customer feedback.</li>
               </ul>
             </div>
           </article>
 
-          <article class="exp-row">
-            <div class="exp-meta">
-              <div class="exp-date">01/2020 – 09/2020</div>
-              <div class="exp-company">Northern University Bangladesh (NUB)</div>
-              <div class="exp-location">Dhaka</div>
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <div class="timeline-date">01/2020 – 09/2020</div>
+              <div class="timeline-company">Northern University Bangladesh (NUB)</div>
+              <div class="timeline-loc">Dhaka</div>
             </div>
-            <div class="exp-content">
+            <div class="timeline-content">
               <h3>Adjunct Faculty Lecturer</h3>
               <ul>
-                <li>Delivered lectures in programming, data analysis, and data visualization to undergraduate students. [file:2]</li>
-                <li>Designed course materials, assignments, and practical exercises in Python and data handling. [file:2]</li>
-                <li>Guided students in applying analytical methods to real-world datasets. [file:2]</li>
+                <li>Delivered lectures in programming, data analysis, and data visualization to undergraduate students.</li>
+                <li>Designed course materials, assignments, and practical exercises in Python and data handling.</li>
+                <li>Guided students in applying analytical methods to real-world datasets.</li>
               </ul>
             </div>
           </article>
         </div>
 
-        <div class="education-grid">
-          <div class="edu-item">
-            <div class="edu-date">10/2020 – Present</div>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <div class="year">10/2020 – Present</div>
             <h3>Master of Science in Computational Social Systems</h3>
-            <p>RWTH Aachen University [file:2]</p>
+            <p>RWTH Aachen University</p>
           </div>
-          <div class="edu-item">
-            <div class="edu-date">01/2014 – 04/2019</div>
+          <div class="edu-card">
+            <div class="year">01/2014 – 04/2019</div>
             <h3>Bachelor of Science in Computer Science & Engineering</h3>
-            <p>Hajee Danesh Science and Technology University [file:2]</p>
+            <p>Hajee Danesh Science and Technology University</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <section id="projects" class="section">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Selected Work</div>
+          <div class="eyebrow">Projects</div>
           <div class="section-line"></div>
         </div>
 
-        <h2 class="section-title">A curated set of work, not a crowded gallery.</h2>
+        <h2 class="section-title">Fewer projects, better presented.</h2>
         <p class="section-intro">
-          Premium portfolios usually feature a smaller number of stronger projects, with one lead project given more narrative weight. This structure reflects that approach while keeping your actual project content. [file:2]
+          Premium portfolios usually highlight the strongest work first. This layout gives the People Analytics project more weight and keeps the others clean and scannable.
         </p>
 
-        <div class="project-feature">
-          <div class="feature-main">
-            <div class="project-label">Featured project</div>
+        <div class="projects-grid" style="margin-top: 28px;">
+          <div class="project-card featured">
+            <div class="project-type">Featured project</div>
             <h3>People Analytics Dashboard</h3>
             <p>
-              ML-powered employee attrition prediction system achieving 75% accuracy through Random Forest classification. It analyzed 1,470 employee records across 35 features, engineered composite satisfaction scores and tenure groupings, and used statistical hypothesis testing to validate key drivers. The dashboard included real-time filtering and 10+ Plotly visualizations, and was deployed on Streamlit Cloud. [file:2]
+              ML-powered employee attrition prediction system achieving 75% accuracy through Random Forest classification. Analyzed 1,470 employee records across 35 features, engineered composite satisfaction scores and tenure groupings, and performed statistical hypothesis testing to validate key drivers. Built an interactive Streamlit dashboard with real-time filtering and 10+ Plotly visualizations, identifying monthly income, age, and tenure as top predictors. Deployed on Streamlit Cloud.
             </p>
             <div class="project-links">
               <a href="https://people-analytics-dashboard-v1.streamlit.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
@@ -1017,115 +1012,109 @@
             </div>
           </div>
 
-          <div class="feature-side">
-            <div>
-              <div class="project-label">Project highlights</div>
+          <div class="project-mini-grid">
+            <div class="project-card">
+              <div class="project-type">NLP</div>
+              <h3>Sentiment-Analysis</h3>
               <p>
-                1,470 employee records, 35 features, p&lt;0.001 validation, 10+ visualizations, and 0.67 ROC-AUC. The strongest predictors included monthly income, age, and tenure. [file:2]
+                Sentiment analysis system classifying movie reviews as positive or negative, developed in Python using Jupyter Notebook with Keras, Gensim, NumPy, Pandas, Regex, and NLTK.
               </p>
+              <div class="project-links">
+                <a href="https://github.com/towmony/Sentiment-Analysis" target="_blank" rel="noopener noreferrer">View code</a>
+              </div>
             </div>
-            <div class="project-links">
-              <a href="#contact">Available for similar work</a>
+
+            <div class="project-card">
+              <div class="project-type">Conversational AI</div>
+              <h3>NLP-based Chatbot using Python</h3>
+              <p>
+                Retrieval-based chatbot using LSTM, NLTK, Keras, and NumPy to classify user intent and return relevant responses from predefined categories.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/towmony/Python-Chatbot-using-NLTK-Keras" target="_blank" rel="noopener noreferrer">View code</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-type">Classification</div>
+              <h3>Detecting fake news using Python</h3>
+              <p>
+                Fake news classification using TF-IDF and PassiveAggressiveClassifier, achieving 92.82% accuracy on a political news dataset.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/towmony/Detecting-fake-news-using-Python" target="_blank" rel="noopener noreferrer">View code</a>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-label">NLP</div>
-            <h3>Sentiment-Analysis</h3>
-            <p>
-              Sentiment analysis system classifying movie reviews as positive or negative using Keras, Gensim, NumPy, Pandas, Regex, and NLTK with Google News Word2Vec embeddings. [file:2]
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/towmony/Sentiment-Analysis" target="_blank" rel="noopener noreferrer">View code</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-label">Conversational AI</div>
-            <h3>NLP-based Chatbot using Python</h3>
-            <p>
-              Retrieval-based chatbot using LSTM, NLTK, Keras, and NumPy to classify intent categories and return appropriate responses. [file:2]
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/towmony/Python-Chatbot-using-NLTK-Keras" target="_blank" rel="noopener noreferrer">View code</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-label">Classification</div>
-            <h3>Detecting fake news using Python</h3>
-            <p>
-              Fake news detection project using TF-IDF vectorization and PassiveAggressiveClassifier, reaching 92.82% accuracy on a political news dataset. [file:2]
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/towmony/Detecting-fake-news-using-Python" target="_blank" rel="noopener noreferrer">View code</a>
-            </div>
-          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="publications">
+    <section id="publications" class="section">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Publications & Details</div>
+          <div class="eyebrow">Publications & extras</div>
           <div class="section-line"></div>
         </div>
 
-        <div class="split-grid">
+        <div class="two-col">
           <div class="stack">
-            <div class="info-card">
-              <div class="mini-label">Publication · 2020</div>
+            <div class="card">
+              <div class="sub">Publication · 2020</div>
               <h3>Enhancement of Single-Handed Bengali Sign Language Recognition Based on Different Features</h3>
               <p>
-                Published in the Journal of Theoretical and Applied Information Technology, this work proposed a computer vision model using image preprocessing, YCbCr skin segmentation, HOG feature extraction, and KNN classification, achieving 91.1% accuracy. [file:2]
+                Journal of Theoretical and Applied Information Technology, ISSN 1992-8645.
+              </p>
+              <p style="margin-top: 10px;">
+                A computer vision–based model using image preprocessing, YCbCr skin segmentation, HOG feature extraction, and KNN classification, achieving 91.1% accuracy.
               </p>
             </div>
 
-            <div class="info-card">
-              <div class="mini-label">Publication · 2018</div>
+            <div class="card">
+              <div class="sub">Publication · 2018</div>
               <h3>Efficient Noise Reduction and HOG Feature Extraction for Sign Language Recognition</h3>
               <p>
-                Presented at ICAEEE, this paper proposed an image processing pipeline combining logarithmic transformation, histogram equalization, Canny edge detection, HOG features, and KNN-based classification. [file:2]
+                International Conference on Advancement in Electrical and Electronic Engineering (ICAEEE).
+              </p>
+              <p style="margin-top: 10px;">
+                An image processing pipeline combining noise reduction, Canny edge detection, HOG feature extraction, and KNN-based classification.
               </p>
             </div>
           </div>
 
           <div class="stack">
-            <div class="info-card">
-              <div class="mini-label">Awards</div>
+            <div class="card">
+              <div class="sub">Awards</div>
               <ul>
-                <li>RWTH Aachen University Text Mining course. [file:2]</li>
-                <li>HSTU Intra University Programming Contests from 2014–2017. [file:2]</li>
-                <li>First female team that made it to top 5. [file:2]</li>
+                <li>RWTH Aachen University Text Mining course.</li>
+                <li>HSTU Intra University Programming Contests from 2014–2017.</li>
+                <li>First female team that made it to top 5.</li>
               </ul>
             </div>
 
-            <div class="info-card">
-              <div class="mini-label">Languages</div>
+            <div class="card">
+              <div class="sub">Languages</div>
               <div class="lang-list">
                 <div class="lang-row">
                   <strong>English</strong>
-                  <span>Native/Bilingual [file:2]</span>
+                  <span>Native/Bilingual</span>
                 </div>
                 <div class="lang-row">
                   <strong>Bangla</strong>
-                  <span>Native/Bilingual [file:2]</span>
+                  <span>Native/Bilingual</span>
                 </div>
                 <div class="lang-row">
                   <strong>German</strong>
-                  <span>Basic [file:2]</span>
+                  <span>Basic</span>
                 </div>
               </div>
             </div>
 
-            <div class="info-card">
-              <div class="mini-label">Social impact</div>
+            <div class="card">
+              <div class="sub">Social impact</div>
               <h3>Teaching underprivileged pupils</h3>
               <p>
-                During your undergraduate years in Bangladesh, you taught underprivileged pupils and worked with families and local organizations, reflecting a strong commitment to education and equal opportunity. [file:2]
+                This is worth keeping on the site in a short form because it adds warmth, purpose, and a more human dimension to your portfolio.
               </p>
             </div>
           </div>
@@ -1137,12 +1126,12 @@
 
   <footer id="contact">
     <div class="container">
-      <div class="footer-shell">
+      <div class="footer-card">
         <div>
           <div class="eyebrow">Contact</div>
-          <h2 class="footer-title">Let the work feel<br>clear and memorable.</h2>
-          <p class="footer-copy">
-            This design is intentionally light, editorial, and restrained. It aims to feel modern and premium without looking like a standard tech template.
+          <h2>Let the work speak,<br />but make contact easy.</h2>
+          <p>
+            This version is intentionally light, restrained, and premium. It is designed to feel more like a refined personal brand site than a typical dark tech template.
           </p>
         </div>
 
