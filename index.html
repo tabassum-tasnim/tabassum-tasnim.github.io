@@ -184,48 +184,80 @@
       padding: 6rem 2.5rem;
     }
 
-    .about-grid {
+    .about-top {
+      max-width: var(--max);
+      margin: 0 auto 4rem;
+    }
+
+    .about-pull {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      max-width: 22ch;
+      opacity: .9;
+    }
+
+    .about-pull em {
+      font-style: normal;
+      border-bottom: 3px solid rgba(0,0,0,.25);
+    }
+
+    /* big stats band */
+    .stats-band {
+      max-width: var(--max);
+      margin: 0 auto 4rem;
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1.5px solid rgba(0,0,0,.15);
+      border-bottom: 1.5px solid rgba(0,0,0,.15);
+      padding: 2.5rem 0;
+    }
+
+    .stat-block {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem;
+      border-right: 1px solid rgba(0,0,0,.12);
+    }
+
+    .stat-block:first-child { padding-left: 0; }
+    .stat-block:last-child { border-right: none; }
+
+    .stat-big {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .stat-desc {
+      font-size: .78rem;
+      opacity: .6;
+      margin-top: .5rem;
+      max-width: 16ch;
+      line-height: 1.4;
+    }
+
+    /* about bottom grid */
+    .about-bottom {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 5rem;
-      align-items: center;
+      align-items: start;
     }
 
-    .about-img img {
-      width: 100%;
-      max-width: 320px;
-      height: auto;
-      mix-blend-mode: multiply;
-    }
-
-    .about-body p {
+    .about-text p {
       font-size: .92rem;
       line-height: 1.78;
       opacity: .82;
       max-width: 52ch;
       margin-bottom: 1.1rem;
-    }
-
-    .stats {
-      display: flex;
-      gap: 2.5rem;
-      margin: 2.2rem 0;
-      flex-wrap: wrap;
-    }
-
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -.03em;
-    }
-
-    .stat-lbl {
-      font-size: .7rem;
-      opacity: .55;
-      letter-spacing: .06em;
-      margin-top: .3rem;
     }
 
     .skills {
@@ -241,6 +273,13 @@
       padding: .28rem .75rem;
       border: 1.5px solid rgba(0,0,0,.22);
       letter-spacing: .02em;
+    }
+
+    .about-img img {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      mix-blend-mode: multiply;
     }
 
     /* EXPERIENCE */
@@ -486,8 +525,11 @@
 
       #about, #experience, #projects, #publications { padding: 4rem 1.2rem; }
 
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-bottom { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-img { display: none; }
+      .stats-band { grid-template-columns: 1fr 1fr; gap: 1.5rem; border: none; padding: 0; }
+      .stat-block { border-right: none; padding: 0; border-bottom: 1px solid rgba(0,0,0,.12); padding-bottom: 1.5rem; }
+      .stat-block:last-child { border-bottom: none; }
 
       .exp-item { grid-template-columns: 1fr; gap: .6rem; }
 
@@ -539,67 +581,71 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="about-img">
-        <img src="about-illustration.jpg" alt="About illustration">
-      </div>
-      <div class="about-body">
-        <p class="eyebrow">About</p>
-        <h2>Research-minded.<br><em>Product-aware.</em></h2>
-        <p style="margin-top:1.4rem">
-          I had two published research papers and a university lecturing
-          role in Bangladesh before I ever set foot in Germany. At 26 I
-          decided that was not enough and moved to Aachen alone — with
-          basic German and no contacts — to study Computational Social
-          Systems at RWTH Aachen.
-        </p>
-        <p>
-          What followed was three years of building real things: ML
-          pipelines and AI tools at E.ON, anomaly detection at Ecolab,
-          a Master's thesis applying NLP to language and social
-          connectedness. Projects that got deployed and actually used
-          by real teams.
-        </p>
-        <p>
-          I am equally comfortable reading a paper, tuning a pipeline,
-          and handing a dashboard to a non-technical stakeholder. I care
-          about things that are usable, not just impressive in a notebook.
-        </p>
-        <div class="stats">
-          <div>
-            <div class="stat-num">3+</div>
-            <div class="stat-lbl">Years industry</div>
-          </div>
-          <div>
-            <div class="stat-num">2</div>
-            <div class="stat-lbl">Publications</div>
-          </div>
-          <div>
-            <div class="stat-num">92%</div>
-            <div class="stat-lbl">Best accuracy</div>
-          </div>
-          <div>
-            <div class="stat-num">2×</div>
-            <div class="stat-lbl">Continents</div>
-          </div>
-        </div>
-        <div class="skills">
-          <span class="skill">Python</span>
-          <span class="skill">Machine Learning</span>
-          <span class="skill">LLMs / RAG</span>
-          <span class="skill">MLOps</span>
-          <span class="skill">SQL</span>
-          <span class="skill">Docker</span>
-          <span class="skill">LangChain</span>
-          <span class="skill">NLP</span>
-          <span class="skill">C++</span>
-          <span class="skill">Power BI</span>
-          <span class="skill">Git / GitLab CI</span>
-        </div>
-      </div>
+
+  <!-- pull quote -->
+  <div class="about-top wrap">
+    <p class="eyebrow">About</p>
+    <p class="about-pull">
+      I build things that are <em>usable</em>,<br>not just impressive in a notebook.
+    </p>
+  </div>
+
+  <!-- big stats band -->
+  <div class="stats-band">
+    <div class="stat-block">
+      <span class="stat-big">3+</span>
+      <span class="stat-desc">Years building in industry across two countries</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-big">2</span>
+      <span class="stat-desc">Peer-reviewed publications before age 26</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-big">92%</span>
+      <span class="stat-desc">Best model accuracy on benchmark datasets</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-big">4</span>
+      <span class="stat-desc">AI tools deployed and used by real teams at E.ON</span>
     </div>
   </div>
+
+  <!-- text + illustration -->
+  <div class="about-bottom">
+    <div class="about-text">
+      <p>
+        I had two published research papers and a university lecturing
+        role in Bangladesh before I ever set foot in Germany. At 26 I
+        decided that was not enough and moved to Aachen alone — with
+        basic German and no contacts — to study Computational Social
+        Systems at RWTH Aachen.
+      </p>
+      <p>
+        What followed was three years of building real things: ML
+        pipelines and AI tools at E.ON, anomaly detection at Ecolab,
+        a Master's thesis applying NLP to language and social
+        connectedness. Projects that got deployed and actually used
+        by real teams.
+      </p>
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">LLMs / RAG</span>
+        <span class="skill">MLOps</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Docker</span>
+        <span class="skill">LangChain</span>
+        <span class="skill">NLP</span>
+        <span class="skill">C++</span>
+        <span class="skill">Power BI</span>
+        <span class="skill">Git / GitLab CI</span>
+      </div>
+    </div>
+    <div class="about-img">
+      <img src="about-illustration.png" alt="About illustration">
+    </div>
+  </div>
+
 </section>
 
 <!-- EXPERIENCE -->
