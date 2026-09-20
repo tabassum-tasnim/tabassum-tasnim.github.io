@@ -100,7 +100,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1.1fr;
-      gap: 9rem;
+      gap: clamp(2rem, 6vw, 9rem);
       align-items: flex-end;
     }
 
@@ -219,7 +219,7 @@
     .stat-block {
       display: flex;
       flex-direction: column;
-      padding: 0 2rem;
+      padding: 0 clamp(1rem, 2vw, 2rem);
       border-right: 1px solid rgba(0,0,0,.12);
     }
 
@@ -228,7 +228,7 @@
 
     .stat-big {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-size: clamp(3rem, 5vw, 5.5rem);
       font-weight: 900;
       line-height: 1;
       letter-spacing: -.04em;
@@ -248,7 +248,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.4fr 1fr;
-      gap: 5rem;
+      gap: clamp(2rem, 4vw, 5rem);
       align-items: start;
     }
 
@@ -280,13 +280,13 @@
       display: flex;
       justify-content: flex-end;
     }
+
     .about-img img {
       width: 100%;
       max-width: 400px;
       height: auto;
       filter: drop-shadow(0px 12px 40px rgba(0,0,0,0.12));
     }
-    
 
     /* EXPERIENCE */
     #experience {
@@ -299,7 +299,7 @@
     .exp-item {
       display: grid;
       grid-template-columns: 190px 1fr;
-      gap: 3rem;
+      gap: clamp(1.5rem, 3vw, 3rem);
       padding-bottom: 2.2rem;
       border-bottom: 1px solid rgba(0,0,0,.1);
       margin-bottom: 2.2rem;
@@ -353,7 +353,7 @@
     .proj-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+      gap: clamp(1rem, 2vw, 1.25rem);
     }
 
     .proj-card {
@@ -588,7 +588,6 @@
 <!-- ABOUT -->
 <section id="about">
 
-  <!-- pull quote -->
   <div class="about-top wrap">
     <p class="eyebrow">About</p>
     <p class="about-pull">
@@ -596,7 +595,6 @@
     </p>
   </div>
 
-  <!-- big stats band -->
   <div class="stats-band">
     <div class="stat-block">
       <span class="stat-big">3+</span>
@@ -616,14 +614,13 @@
     </div>
   </div>
 
-  <!-- text + illustration -->
   <div class="about-bottom">
     <div class="about-text">
       <p>
         I had two published research papers and a university lecturing
         role in Bangladesh before I ever set foot in Germany. At 26 I
         decided that was not enough and moved to Aachen alone, with
-        basic German and no contacts ; to study Computational Social
+        basic German and no contacts — to study Computational Social
         Systems at RWTH Aachen.
       </p>
       <p>
@@ -685,7 +682,7 @@
         <p class="exp-loc">Essen, Germany</p>
       </div>
       <div class="exp-body">
-        <h3>Machine Learning &amp; MLOps Working Student </h3>
+        <h3>Machine Learning &amp; MLOps Working Student</h3>
         <ul>
           <li>Designed and deployed end-to-end ML pipelines in cloud environments</li>
           <li>Automated data processing and feature engineering workflows</li>
@@ -812,7 +809,7 @@
         <p class="foot-title">Data Scientist · Applied AI · Germany</p>
       </div>
       <div class="foot-links">
-        <a href="mailto:tsnim.tabassum@rwth-aachen.de">tasnim.tabassum@rwth-aachen.de</a>
+        <a href="mailto:tasnim.tabassum@rwth-aachen.de">tasnim.tabassum@rwth-aachen.de</a>
         <a href="https://github.com/tabassum-tasnim" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/towmony/" target="_blank">LinkedIn</a>
         <a href="https://scholar.google.com/citations?hl=en&user=iG6eCN8AAAAJ" target="_blank">Google Scholar</a>
