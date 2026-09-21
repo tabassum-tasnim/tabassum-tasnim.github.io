@@ -172,10 +172,10 @@
 
     .hero-right img {
       width: 100%;
-      max-width: 500px;
-      height: auto;
+      max-width: 600px;
+      height: 800px;
       display: block;
-      filter: saturate(1.4) contrast(1.05);
+      filter: saturate(1.2) contrast(1.05);
     }
 
     /* ABOUT */
@@ -283,9 +283,9 @@
 
     .about-img img {
       width: 100%;
-      max-width: 480px;
-      height: auto;
-      filter: drop-shadow(0px 12px 40px rgba(0,0,0,0.12)) saturate(1.4);
+      max-width: 580px;
+      height: 650px;
+      filter: drop-shadow(0px 12px 40px rgba(0,0,0,0.12)) saturate(1.1);
     }
 
     /* EXPERIENCE */
@@ -588,11 +588,18 @@
 <!-- ABOUT -->
 <section id="about">
 
-  <div class="about-top wrap">
-    <p class="eyebrow">About</p>
-    <p class="about-pull">
-      I build things that are <em>usable</em>,<br>not just impressive in a notebook.
-    </p>
+  <div class="about-top wrap" style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 5rem); align-items: center;">
+    <div>
+      <p class="eyebrow">About</p>
+      <p class="about-pull">
+        I build things that are <em>usable</em>,<br>not just impressive in a notebook.
+      </p>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <img src="work-illustration.png" alt="Work illustration"
+           style="width: 100%; max-width: 380px; height: auto;
+                  filter: saturate(1.4) drop-shadow(0px 12px 40px rgba(0,0,0,0.10));">
+    </div>
   </div>
 
   <div class="stats-band">
@@ -659,29 +666,22 @@
       <p class="eyebrow">Experience</p>
       <h2>Where I've<br><em>built things.</em></h2>
     </div>
-    <div style="display: grid; grid-template-columns: 400px 1fr; gap: clamp(2rem, 4vw, 5rem); align-items: center;">
-      <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="work-illustration.png" alt="Work illustration"
-             style="width: 100%; max-width: 380px; height: auto;
-                    filter: saturate(1.4) drop-shadow(0px 12px 40px rgba(0,0,0,0.10));">
-      </div>
+    <div class="exp-item">
       <div>
-        <div class="exp-item">
-          <div>
-            <p class="exp-date">Mar 2024 — Present</p>
-            <p class="exp-co">E.ON</p>
-            <p class="exp-loc">Essen, Germany</p>
-          </div>
-          <div class="exp-body">
-            <h3>Applied AI &amp; Automation Working Student</h3>
-            <ul>
-              <li>Built AI prototypes and workflows using Python and LLM tools</li>
-              <li>Developed four AI-driven internal tools that improved process efficiency</li>
-              <li>Ran experiments on model performance, prompt design, and workflow reliability</li>
-              <li>Translated behaviour and change management research into practical AI solutions</li>
-            </ul>
-          </div>
-        </div>
+        <p class="exp-date">Mar 2024 — Present</p>
+        <p class="exp-co">E.ON</p>
+        <p class="exp-loc">Essen, Germany</p>
+      </div>
+      <div class="exp-body">
+        <h3>Applied AI &amp; Automation Working Student</h3>
+        <ul>
+          <li>Built AI prototypes and workflows using Python and LLM tools</li>
+          <li>Developed four AI-driven internal tools that improved process efficiency</li>
+          <li>Ran experiments on model performance, prompt design, and workflow reliability</li>
+          <li>Translated behaviour and change management research into practical AI solutions</li>
+        </ul>
+      </div>
+    </div>
         <div class="exp-item">
           <div>
             <p class="exp-date">Apr 2023 — Oct 2023</p>
@@ -712,7 +712,6 @@
               <li>Produced visualisations and dashboards for operational teams</li>
               <li>Supported product testing with data-backed research and customer feedback</li>
             </ul>
-          </div>
         </div>
       </div>
     </div>
